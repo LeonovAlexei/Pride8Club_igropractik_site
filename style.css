@@ -1,3 +1,4 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css');
 *{
   margin: 0;
   padding: 0;
@@ -8,12 +9,18 @@ max-width: 100%;
 body{
   font-family: 'Montserrat', sans-serif;
 }
+.header_mobil {
+  display: none;
+}
+.about__img_mobil{
+  display: none;
+}
 .center{
     padding-left: calc(50% - 640px);
     padding-right: calc(50% - 640px);
 }
 .header{
-  background: rgba(174, 35, 31, 0.8);
+  background: #AE231F;
   padding-top:  21px;
   padding-bottom: 21px;
   display: flex;
@@ -70,9 +77,39 @@ body{
   width: 569px;
   padding-top: 18px;
 }
+
+.button {
+  /* Сбрасываем дефолтные стили */
+  border: none;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 21px 21px;
+  border-radius: 100px;
+  color: #fff;
+  background: #AE231F;
+  margin-top: 18px;
+}
+.button i {
+  margin-right: 12px;
+}
+
+.button:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  background: #E4322D;
+}
+.button:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background: #801A17;
+}
 .about{
   background: linear-gradient(
-    to right, #AE231F calc(85% - 42%) , #FFFFFF calc(85% - 42%));
+    to right, #AE231F 32% , #FFFFFF 32% );
     display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -163,6 +200,7 @@ body{
     width: 30px;
     height: 30px;
     background-color: transparent;
+    opacity: 1;
 }
 
 
@@ -177,13 +215,24 @@ margin-bottom: -3rem;
 
 @media (max-width: 1024px) {
   /* Стили для планшета */
+  .header{
+    display: none;
+  }
+  .about__img_mobil{
+    display: none;
+  }
+  .header_mobil{
+    justify-content: center;
+    background: #AE231F;
+    padding-top:  21px;
+    padding-bottom: 21px;
+    display: flex;
+    gap: 62px;
+}
   .center{
     padding-left: calc(50% - 368px);
     padding-right: calc(50% - 368px);
   }
-  .header{
-    justify-content: center;
-   }
   .top{
     gap: 60px;
   }
@@ -204,6 +253,7 @@ margin-bottom: -3rem;
     display: block;
     padding-top: 0px;
     padding-bottom: 0px;
+
   }
   .about__info{
     display: flex;
@@ -224,6 +274,9 @@ margin-bottom: -3rem;
       align-items: flex-start;
       padding-top: 60px;
       padding-bottom: 60px;
+      padding-left: 0px;
+      padding-right: 0px;
+
   }
   .games{
     padding-top: 60px;
@@ -236,29 +289,41 @@ margin-bottom: -3rem;
     padding-top: 60px;
     padding-bottom: 60px;
   }
+
 }
-@media (max-width: 425px ) {
+@media (max-width: 767px ) {
   .center{
     padding-left: 16px;
     padding-right: 16px;
   }
-  .header {
-    gap: 24px;
+  .header_mobil{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
-  .header__link {
-    font-size: 16px;
-  }
+
   .top__info_h3, .title, .about__info_p, .top__info_p {
-    width: 343px;
+    width: 288px;
     text-align: center;
     padding-top: 12px;
   }
+  .about__info_p, .top__info_p{
+    font-size: 16px;
+  }
+  .heading{
+    font-size: 30px;
+  }
   .title{
-    font-size: 48px;
-    line-height: 59px;
+    font-size: 40px;
+    line-height: 40px;
   }
   .top {
     gap:16px;
+  }
+  h3 {
+    font-size: 18px;
   }
   .games_content {
     gap: 16px;
@@ -272,8 +337,27 @@ margin-bottom: -3rem;
   .footer {
     display: flex;
     flex-wrap: nowrap;
-    gap: 0px;
+    gap: 16px;
     padding-top: 16px;
     padding-bottom: 16px;
   }
+  .header{
+    display: none;
+  }
+  .about__img_mobil{
+    display: inline;
+    background: linear-gradient(
+      to right, #AE231F 61% , #FFFFFF 61%);
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      padding-left: 0px;
+      padding-right: 0px;
+  }
+  .about__img{
+    display: none;
+   }
 }
